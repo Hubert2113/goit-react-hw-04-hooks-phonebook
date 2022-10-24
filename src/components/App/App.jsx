@@ -28,16 +28,16 @@ export const App = () => {
     }
   };
 
-  const handleInputName = () => {
-    setName(name);
+  const handleInputName = (ev) => {
+    setName(ev.target.value);
   };
 
-  const handleInputNumber = () => {
-    setNumber(number)
+  const handleInputNumber = (ev) => {
+    setNumber(ev.target.value)
   };
 
-  const handleInputFilter = () => {
-    setFilter(filter)
+  const handleInputFilter = (ev) => {
+    setFilter(ev.target.value)
   };
 
   const deleteContact = (ev) => {
