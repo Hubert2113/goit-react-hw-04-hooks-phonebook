@@ -1,7 +1,7 @@
 import styles from './Form.module.css';
 import PropTypes from 'prop-types';
 
-const Form = ({ handleSubmit, name, handleInput, number }) => {
+const Form = ({ handleSubmit, name, handleInputName, handleInputNumber, number }) => {
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       <label className={styles.formInput}>
@@ -11,7 +11,7 @@ const Form = ({ handleSubmit, name, handleInput, number }) => {
           className={styles.formTextfield}
           type="text"
           name="name"
-          onChange={handleInput}
+          onChange={handleInputName}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
@@ -22,7 +22,7 @@ const Form = ({ handleSubmit, name, handleInput, number }) => {
         <input
           value={number}
           className={styles.formTextfield}
-          onChange={handleInput}
+          onChange={handleInputNumber}
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
