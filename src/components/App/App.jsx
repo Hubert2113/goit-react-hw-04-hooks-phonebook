@@ -6,10 +6,10 @@ import ContactList from 'components/ContactList/ContactList';
 
 export const App = () => {
 
-  const [contacts, setContacts] = useState([]);
-  const [filter, setFilter] = useState('');
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  let [contacts, setContacts] = useState([]);
+  let [filter, setFilter] = useState('');
+  let [name, setName] = useState('');
+  let [number, setNumber] = useState('');
 
   const handleSubmit = ev => {
     ev.preventDefault();
@@ -42,7 +42,7 @@ export const App = () => {
 
   const deleteContact = (ev) => {
     const newContacts = contacts.filter((contact) => contact.id !== ev.target.parentNode.id);
-    this.setState({ contacts: newContacts });
+    setContacts(newContacts);
   }
 
   return (
